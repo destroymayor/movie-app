@@ -7,12 +7,12 @@ const List = () => {
   const moviesData = useRecoilValue(moviesDataState);
   const { isLoading, isError, data } = moviesData;
 
-  if (isError || data.length === 0) return <div>No data</div>;
+  if (isError || data.length === 0) return <div className="dark:text-white">No data</div>;
 
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <div className="dark:text-white">loading...</div>;
 
   return (
-    <ul className="flex flex-wrap justify-center">
+    <ul className="flex flex-wrap justify-around">
       {data?.map((item, index) => (
         <ListItem key={item?.title + index.toString()} item={item} />
       ))}

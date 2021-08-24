@@ -9,7 +9,7 @@ const CoverImage = (props) => {
 
   return (
     <div className="flex-1 flex justify-center">
-      {url && <Image src={imageUrl} alt={alt} width={292} height={454} />}
+      {url && <Image className="rounded-t-md" src={imageUrl} alt={alt} width={300} height={450} />}
     </div>
   );
 };
