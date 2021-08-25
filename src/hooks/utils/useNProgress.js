@@ -8,11 +8,17 @@ const useNProgress = () => {
   NProgress.configure({ showSpinner: false });
 
   useEffect(() => {
-    const handleStart = () => {
+    const handleStart = (url) => {
+      if (url !== window.location.pathname) {
+        window.routeTimeout = setTimeout(() => (window.location = url), 100);
+      }
+
       NProgress.start();
     };
 
     const handleStop = () => {
+      clearTimeout(window.routeTimeout);
+
       NProgress.done();
     };
 
