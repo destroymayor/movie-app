@@ -24,7 +24,7 @@ const MovieCard = (props) => {
 
   return (
     <li
-      className="w-96 sm:w-72 flex flex-col m-5 rounded-md shadow-lg cursor-pointer transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-105"
+      className="w-72 flex flex-col m-5 rounded-md shadow-lg cursor-pointer transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-105"
       onClick={handleNavigation}
     >
       <CoverImage url={coverImage} alt={id} />
