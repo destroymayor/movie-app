@@ -24,10 +24,10 @@ const Movie = (props) => {
 
   return (
     <main className="flex flex-wrap justify-center">
-      <div className="flex-initial flex justify-center p-10 bg-gray-200">
+      <div className="flex-initial flex justify-center p-10 dark:bg-gray-200">
         <Image className="rounded" src={imageUrl} alt={title} width={300} height={450} />
       </div>
-      <div className="flex-initial py-10 px-2 bg-gray-300">
+      <div className="flex-initial py-10 px-2 dark:bg-gray-300">
         <h1 className="text-3xl">{title}</h1>
         <div className="">{voteAverage} / 10</div>
         <div className="">{releaseDate}</div>

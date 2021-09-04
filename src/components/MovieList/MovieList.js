@@ -1,6 +1,7 @@
 import { useRecoilValue } from 'recoil';
 import { moviesDataState, moviesSearchState } from '@/store/movies/movies';
 
+import LoadMore from '@/components/MovieList/LoadMore';
 import CardSkeleton from '@/components/MovieCard/CardSkeleton';
 import MovieCard from '@/components/MovieCard/MovieCard';
 
@@ -12,15 +13,18 @@ const MovieList = () => {
   if (isLoading) return <CardSkeleton />;
 
   return (
-    <ul className="flex flex-wrap justify-center">
-      {data?.map((item, index) => (
-        <MovieCard
-          key={item?.title + index.toString()}
-          type={moviesSearch.discover.type}
-          data={item}
-        />
-      ))}
-    </ul>
+    <div className="h-screen flex flex-col items-center dark:bg-gray-600">
+      <ul className="flex flex-wrap justify-center bg-white dark:bg-gray-600">
+        {data?.map((item, index) => (
+          <MovieCard
+            key={item?.title + index.toString()}
+            type={moviesSearch.discover.type}
+            data={item}
+          />
+        ))}
+      </ul>
+      <LoadMore />
+    </div>
   );
 };
 

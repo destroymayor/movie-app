@@ -17,9 +17,9 @@ const Header = (props) => {
 
   return (
     <div className="flex justify-between items-center pt-2 md:px-8 ">
-      <h2 className="px-5 text-2xl font-semibold text-black">{title}</h2>
+      <h2 className="px-5 text-2xl font-semibold text-black dark:text-white">{title}</h2>
       <button
-        className="font-semibold rounded-md p-2 text-yellow-500 transition duration-200 ease-in-out hover:text-yellow-600"
+        className="font-semibold rounded-md p-2 text-yellow-500 transition duration-200 ease-in-out hover:text-yellow-600 dark:hover:bg-gray-300"
         onClick={handleMoreMovies}
       >
         SEE MORE

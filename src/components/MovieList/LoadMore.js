@@ -11,14 +11,16 @@ const LoadMore = () => {
 
   const { isLoadingMore, isError, isReachingEnd } = moviesData;
 
-  const label = isLoadingMore ? 'loading...' : isReachingEnd ? 'no more movies' : ' load more';
+  const label = isLoadingMore ? 'Loading...' : isReachingEnd ? 'No more movies' : ' Load more';
 
   if (isError) return <div />;
 
   return (
     <div ref={containerRef} className="flex items-center py-5">
-      {!isReachingEnd && <ArrowDownIcon className="w-7 h-7 text-gray-600 animate-bounce" />}
-      <span className="px-2">{label}</span>
+      {!isReachingEnd && (
+        <ArrowDownIcon className="w-7 h-7 animate-bounce text-gray-600 dark:text-white" />
+      )}
+      <span className="px-2 text-gray-600 dark:text-white">{label}</span>
     </div>
   );
 };

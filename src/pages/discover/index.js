@@ -1,12 +1,12 @@
 import useMovies from '@/hooks/useMovies';
 
 import Layout from '@/components/Layout/Layout';
-import Discover from '@/components/Discover/Discover';
+import MovieList from '@/components/MovieList/MovieList';
 
 export default function DiscoverPage() {
   useMovies();
 
-  return <Discover />;
+  return <MovieList />;
 }
 
 DiscoverPage.getLayout = function getLayout(page) {

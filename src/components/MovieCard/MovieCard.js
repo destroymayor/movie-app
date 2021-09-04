@@ -28,15 +28,15 @@ const MovieCard = (props) => {
       onClick={handleNavigation}
     >
       <CoverImage url={coverImage} alt={id} />
-      <div className="flex-0 flex justify-between p-2">
+      <div className="flex-0 flex justify-between p-2 dark:bg-gray-500 text-black dark:text-white rounded-b-md">
         <div className="flex-1 flex flex-col flex-wrap justify-center pl-1 pr-2">
           <div className="w-48 text-lg truncate">{title}</div>
-          <div className="text-gray-500">{releaseDate}</div>
+          <div className="text-gray-500 dark:text-gray-200">{releaseDate}</div>
         </div>
 
         <div className="w-14 flex justify-center items-center  pt-2 pb-2 mt-1 mb-1 rounded-md">
           <StarIcon className="h-6 w-5 pr-1 text-yellow-500" />
-          <span className="text-yellow-800">{voteAverage}</span>
+          <span className="text-yellow-800 dark:text-yellow-400">{voteAverage}</span>
         </div>
       </div>
     </li>
