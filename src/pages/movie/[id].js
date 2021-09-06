@@ -2,6 +2,7 @@ import HEAD from 'next/head';
 
 import getMovie from '@/api/getMovie';
 
+import Layout from '@/components/Layout/Layout';
 import Movie from '@/components/Movie/Movie';
 
 export default function MoviePage(props) {
@@ -18,6 +19,10 @@ export default function MoviePage(props) {
     </>
   );
 }
+
+MoviePage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
 
 export async function getStaticProps({ params }) {
   const data = await getMovie(params?.id);

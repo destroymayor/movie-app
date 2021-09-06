@@ -8,22 +8,8 @@ import Layout from '@/components/Layout/Layout';
 import Index from '@/components/Index';
 
 export default function HomePage(props) {
-  const { data } = props;
-
-  return <Index data={data} />;
-}
-
-HomePage.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
-};
-
-export async function getStaticProps() {
+  const { getPopularMovies, getPopularTVShows, getTopRated, getBestMovieOfTheYear } = props;
   const { movie, tv } = discover_type.fields;
-
-  const getPopularMovies = await getMovies(getPopularParams);
-  const getPopularTVShows = await getTVs(getPopularParams);
-  const getTopRated = await getMovies(getTopRatedParams);
-  const getBestMovieOfTheYear = await getMovies(getBestMovieOfTheYearParams);
 
   const data = [
     {
@@ -52,9 +38,25 @@ export async function getStaticProps() {
     },
   ];
 
+  return <Index data={data} />;
+}
+
+HomePage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
+export async function getStaticProps() {
+  const getPopularMovies = await getMovies(getPopularParams);
+  const getPopularTVShows = await getTVs(getPopularParams);
+  const getTopRated = await getMovies(getTopRatedParams);
+  const getBestMovieOfTheYear = await getMovies(getBestMovieOfTheYearParams);
+
   return {
     props: {
-      data,
+      getPopularMovies,
+      getPopularTVShows,
+      getTopRated,
+      getBestMovieOfTheYear,
     },
     revalidate: 100,
   };

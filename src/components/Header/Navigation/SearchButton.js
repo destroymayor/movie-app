@@ -20,7 +20,7 @@ const SearchButton = () => {
     <>
       {router.pathname !== searchRoute && (
         <div
-          className="p-2 rounded-full transition duration-200 ease-in-out cursor-pointer text-gray-800 dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500 hover:bg-gray-100 dark:hover:bg-gray-100"
+          className="p-2 rounded-full transition duration-200 ease-in-out cursor-pointer text-gray-800 dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500"
           onClick={handleNavigation}
         >
           <SearchIcon className="w-6 h-6" />

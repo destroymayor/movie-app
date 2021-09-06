@@ -13,9 +13,9 @@ const CoverImage = (props) => {
       {url ? (
         <Image className="rounded-t-md" src={imageUrl} alt={alt} width={300} height={450} />
       ) : (
-        <div className="flex flex-col justify-center items-center w-full h-full rounded-t-md bg-gray-300 py-36">
-          <PhotographIcon className="w-20 h-20 text-gray-500" />
-          <span className="text-gray-600">No image available</span>
+        <div className="flex flex-col justify-center items-center w-full h-full py-36 rounded-t-md bg-gray-200 text-gray-700 dark:text-gray-500">
+          <PhotographIcon className="w-20 h-20" />
+          <span className="">No image available</span>
         </div>
       )}
     </div>

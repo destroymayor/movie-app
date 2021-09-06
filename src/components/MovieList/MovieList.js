@@ -10,10 +10,15 @@ const MovieList = () => {
   const moviesData = useRecoilValue(moviesDataState);
   const { isLoading, data } = moviesData;
 
-  if (isLoading) return <CardSkeleton />;
+  if (isLoading)
+    return (
+      <div className="h-screen">
+        <CardSkeleton />
+      </div>
+    );
 
   return (
-    <div className="h-screen flex flex-col items-center dark:bg-gray-600">
+    <div className="h-screen flex flex-col items-center">
       <ul className="flex flex-wrap justify-center bg-white dark:bg-gray-600">
         {data?.map((item, index) => (
           <MovieCard

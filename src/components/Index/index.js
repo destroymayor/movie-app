@@ -5,7 +5,7 @@ const Index = (props) => {
   const { data } = props;
 
   return (
-    <main className="flex flex-col items-center bg-white dark:bg-gray-600">
+    <main className="flex flex-col items-center">
       <ul className="flex flex-wrap justify-center mt-5">
         {data?.map((item) => (
           <li key={item.title} className="w-99-vw max-w-full mb-12">

@@ -2,6 +2,7 @@ import HEAD from 'next/head';
 
 import getTV from '@/api/getTV';
 
+import Layout from '@/components/Layout/Layout';
 import TV from '@/components/TV/TV';
 
 export default function MoviePage(props) {
@@ -18,6 +19,10 @@ export default function MoviePage(props) {
     </>
   );
 }
+
+MoviePage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
 
 export async function getStaticProps({ params }) {
   const data = await getTV(params?.id);

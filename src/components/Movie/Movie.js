@@ -9,8 +9,6 @@ const Movie = (props) => {
   const { data } = props;
   const router = useRouter();
 
-  console.log(data);
-
   const backdropPathUrl = `${IMAGE_URL_ORIGINAL}${data?.backdrop_path}`;
   const imageUrl = `${IMAGE_URL_W300}${data?.poster_path}`;
   const title = data?.original_title;

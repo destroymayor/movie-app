@@ -16,7 +16,10 @@ const LoadMore = () => {
   if (isError) return <div />;
 
   return (
-    <div ref={containerRef} className="flex items-center py-5">
+    <div
+      ref={containerRef}
+      className="flex justify-center items-center w-full  py-5 bg-white dark:bg-gray-600"
+    >
       {!isReachingEnd && (
         <ArrowDownIcon className="w-7 h-7 animate-bounce text-gray-600 dark:text-white" />
       )}

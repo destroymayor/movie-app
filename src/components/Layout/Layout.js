@@ -4,10 +4,10 @@ const Layout = (props) => {
   const { children } = props;
 
   return (
-    <>
+    <div className="bg-white dark:bg-gray-600">
       <Header />
       {children}
-    </>
+    </div>
   );
 };
 
