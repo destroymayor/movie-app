@@ -1,9 +1,7 @@
 export const TMDB_URL = 'https://api.themoviedb.org';
 
 // image url
-export const IMAGE_URL_W300 = `https://image.tmdb.org/t/p/w300`;
-export const IMAGE_URL_W500 = `https://image.tmdb.org/t/p/w500`;
-export const IMAGE_URL_ORIGINAL = `https://image.tmdb.org/t/p/original`;
+export const IMAGE_URL = `https://image.tmdb.org/t/p`;
 
 const API_VERSION = 3;
 

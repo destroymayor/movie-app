@@ -9,7 +9,7 @@ const Title = () => {
   const router = useRouter();
   const { searchState } = useSearchMovie();
 
-  const title = router.pathname === '/' ? 'Movie App' : searchState.discover.title;
+  const title = router.pathname === '/discover' ? searchState.discover.title : 'Movie App';
 
   if (router.pathname === '/search') return <SearchBar />;
 

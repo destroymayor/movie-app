@@ -1,13 +1,14 @@
 import { useRouter } from 'next/router';
 
 import Image from 'next/image';
-import { IMAGE_URL_W300 } from '@/api/api';
+import { IMAGE_URL } from '@/api/api';
+import imageSizes from '@/constants/tmdb/image-sizes';
 
 const TV = (props) => {
   const { data } = props;
   const router = useRouter();
 
-  const imageUrl = `${IMAGE_URL_W300}${data?.poster_path}`;
+  const imageUrl = `${IMAGE_URL}/${imageSizes.posterSizes.w342}/${data?.poster_path}`;
 
   if (router.isFallback) return <div className="dark:bg-gray-800 h-screen">loading...</div>;
 

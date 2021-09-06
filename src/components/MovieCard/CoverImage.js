@@ -1,12 +1,13 @@
 import Image from 'next/image';
 
 import { PhotographIcon } from '@heroicons/react/outline';
-import { IMAGE_URL_W300 } from '@/api/api';
+import { IMAGE_URL } from '@/api/api';
+import imageSizes from '@/constants/tmdb/image-sizes';
 
 const CoverImage = (props) => {
   const { url, alt } = props;
 
-  const imageUrl = `${IMAGE_URL_W300}${url}`;
+  const imageUrl = `${IMAGE_URL}/${imageSizes.posterSizes.w342}/${url}`;
 
   return (
     <div className="flex-auto flex justify-center">
