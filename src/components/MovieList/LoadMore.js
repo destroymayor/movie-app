@@ -11,7 +11,7 @@ const LoadMore = () => {
 
   const { isLoadingMore, isError, isReachingEnd } = moviesData;
 
-  const label = isLoadingMore ? 'Loading...' : isReachingEnd ? 'No more movies' : ' Load more';
+  const label = isLoadingMore ? 'Loading...' : isReachingEnd ? 'No more movies' : 'Load more';
 
   if (isError) return <div />;
 

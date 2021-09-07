@@ -3,20 +3,28 @@ import HEAD from 'next/head';
 import getTV from '@/api/getTV';
 import { discover_type } from '@/constants/fields/fields';
 
+import useTVDetails from '@/hooks/useTVDetails';
+
 import Layout from '@/components/Layout/Layout';
 import MovieDetail from '@/components/MovieDetail/Movie';
 
 export default function TVShowsPage(props) {
-  const { data } = props;
+  const { id, tvData } = props;
 
-  const originName = data?.original_name;
+  const { data: tvReviewsData } = useTVDetails({ queryParams: 'reviews', id });
+  const { data: tvKeywordsData } = useTVDetails({ queryParams: 'keywords', id });
 
   return (
     <>
       <HEAD>
-        <title>{originName}</title>
+        <title>{tvData?.original_name}</title>
       </HEAD>
-      <MovieDetail data={data} type={discover_type.fields.tv.key}></MovieDetail>
+      <MovieDetail
+        data={tvData}
+        reviewsData={tvReviewsData?.results}
+        keywordsData={tvKeywordsData?.results}
+        type={discover_type.fields.tv.key}
+      ></MovieDetail>
     </>
   );
 }
@@ -26,16 +34,11 @@ TVShowsPage.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps({ params }) {
-  const data = await getTV(params?.id);
-
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+  const id = params?.id;
+  const tvData = await getTV(id);
 
   return {
-    props: { data },
+    props: { id, tvData },
     revalidate: 100,
   };
 }
