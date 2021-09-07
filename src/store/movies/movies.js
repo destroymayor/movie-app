@@ -19,7 +19,7 @@ export const moviesSearchState = atom({
     isLoading: false,
     isError: false,
     searchValue: '',
-    searchMode: mode.search,
+    searchMode: mode.discover,
     discover: {
       title: discover_type.fields.movie.label,
       type: discover_type.fields.movie.key,

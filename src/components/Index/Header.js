@@ -1,6 +1,7 @@
 import router from 'next/router';
 
 import useSearchMovie from '@/hooks/useSearchMovie';
+import routes from '@/constants/routes';
 
 const Header = (props) => {
   const { data } = props;
@@ -10,7 +11,7 @@ const Header = (props) => {
     const { title, type, params } = data;
     setDiscoverMovies({ title, type, params });
 
-    router.push(`/discover`);
+    router.push(routes.discover);
   };
 
   const title = data?.title;

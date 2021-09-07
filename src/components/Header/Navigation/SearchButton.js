@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 
 import useSearchMovie from '@/hooks/useSearchMovie';
 import { mode } from '@/constants/fields/fields';
+import routes from '@/constants/routes';
 
 import { SearchIcon } from '@heroicons/react/solid';
 
@@ -9,7 +10,7 @@ const SearchButton = () => {
   const router = useRouter();
   const { setSearchMode } = useSearchMovie();
 
-  const searchRoute = '/search';
+  const searchRoute = routes.search;
 
   const handleNavigation = () => {
     setSearchMode(mode.search);
